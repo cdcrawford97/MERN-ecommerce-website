@@ -1,13 +1,13 @@
 import StripeCheckout from 'react-stripe-checkout';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { unstable_HistoryRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const KEY = "pk_test_51KFzfFH3ApC5bm944Ziz4pjU946J6kv69bLeBklPJ1eQUTN7Yot85C8DPnmScjEx4wGrQgF6rdS6XislSgpXSN2l00BM8q2ibc"
 
 const Pay = () => {
     const [stripeToken, setStripeToken] = useState(null);
-    const history = unstable_HistoryRouter;
+    const navigate = useNavigate()
 
     const onToken = (token) => {
         setStripeToken(token);
@@ -23,7 +23,7 @@ const Pay = () => {
                     }
                 );
                 console.log(res.data);
-                history.push("/success");
+                navigate('/success');
             } catch(err) {
                 console.log(err);
             }
@@ -31,7 +31,7 @@ const Pay = () => {
 
         stripeToken && makeRequest();
 
-    }, [stripeToken, history]);
+    }, [stripeToken, navigate]);
 
     return (
         <div 
