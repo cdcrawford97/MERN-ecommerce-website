@@ -2,7 +2,7 @@ import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
-import { mobileM, mobileS, tablet } from '../Responsive/responsive';
+import { mobileM, tablet } from '../Responsive/responsive';
 
 
 const Container = styled.div`

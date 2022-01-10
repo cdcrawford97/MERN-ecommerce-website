@@ -4,9 +4,10 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
-  return <Cart />;
+  return <Checkout />;
 };
 
 export default App;
